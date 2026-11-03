@@ -9,7 +9,7 @@ using std::cout;
 // Each module has its own job so loading, storage, maths and console output can be changed separately
 int main()
 {
-    WeatherStore data; // Map of day keys and the BST belonging to each day
+    WeatherStore data; // Map of day keys and the BST belonging to each day aka std::map<int, Bst<DataRecType> > data;
     int added = 0;
     int duplicates = 0;
     if(!LoadData("data/data_source.txt", data, added, duplicates)) // Finish loading before starting the menu

@@ -1,6 +1,13 @@
 #include "WeatherStore.h"
+//collectmonth() now is checking everyday entry, by scanning all day keys,
+//if i use the map's ordered keys and look for the relevant date ranges, it would be more efficient and faster with less effort.
+//if i apply custom map also it can hide the std::map interface, less dependant on the container.
 
-typedef WeatherStore::const_iterator WeatherIterator; // Short name for a read-only map iterator, following the Lecture 20 map example
+//My collection uses extra memory because it copies complete records before extracting the numeric values.
+//A future improvement could collect only the values needed.
+//eg copy the whole record, instead of just the temp only, it copies everything
+
+typedef WeatherStore::const_iterator WeatherIterator; // Short name for a read-only map iterator, lect 20 example
 
 WeatherRecords * RecordCollector::m_records = nullptr;
 
@@ -38,7 +45,7 @@ void CollectMonth(const WeatherStore & data, int month, int year, WeatherRecords
     // Start at the first entry, stop after the last entry and move to the next day each time
     for(WeatherIterator day = data.begin(); day != data.end(); day++)
     {
-        int storedMonth = (day->first / 100) % 100; // Extract MM from YYYYMMDD
+        int storedMonth = (day->first / 100) % 100; // Extract MM from YYYYMMDD eg 20150302, % is modulo
         int storedYear = day->first / 10000;
         if(storedMonth == month && (year == 0 || storedYear == year))
         {

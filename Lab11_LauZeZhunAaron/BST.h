@@ -1,9 +1,11 @@
 #ifndef BST_H_INCLUDED
 #define BST_H_INCLUDED
-
+//can use avl to be better tbh,  maintains balance using rotations after updates
+//With timestamps inserted in ascending order, my BST tends to grow to the right
+//The cause is the insertion order
 /**
  * @file BST.h
- * @brief Generic recursive BST reused from Lab 9 for Lab 10d and Lab 11
+ * @brief BST
  */
 
 /**
