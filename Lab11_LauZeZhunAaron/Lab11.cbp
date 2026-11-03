@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+    <FileVersion major="1" minor="6" />
+    <Project>
+        <Option title="Lab 11" />
+        <Option compiler="gcc" />
+        <Build>
+            <Target title="Debug">
+                <Option output="bin/Debug/Lab11" prefix_auto="1" extension_auto="1" />
+                <Option object_output="obj/Debug/" />
+                <Option working_dir="." />
+                <Option type="1" />
+                <Option compiler="gcc" />
+                <Compiler><Add option="-g" /></Compiler>
+            </Target>
+            <Target title="Release">
+                <Option output="bin/Release/Lab11" prefix_auto="1" extension_auto="1" />
+                <Option object_output="obj/Release/" />
+                <Option working_dir="." />
+                <Option type="1" />
+                <Option compiler="gcc" />
+                <Compiler><Add option="-O2" /></Compiler>
+                <Linker><Add option="-static-libgcc" /><Add option="-static-libstdc++" /></Linker>
+            </Target>
+        </Build>
+        <Compiler>
+            <Add option="-std=c++11" />
+            <Add option="-Wall" />
+            <Add option="-Wextra" />
+            <Add option="-Wpedantic" />
+        </Compiler>
+        <Unit filename="main.cpp" />
+        <Unit filename="Menu.cpp" />
+        <Unit filename="DataIO.cpp" />
+        <Unit filename="WeatherStore.cpp" />
+        <Unit filename="Processing.cpp" />
+        <Unit filename="Calculation.cpp" />
+        <Unit filename="WeatherData.cpp" />
+        <Unit filename="Date.cpp" />
+        <Unit filename="Time.cpp" />
+        <Unit filename="DateTimeIO.cpp" />
+        <Unit filename="Menu.h" />
+        <Unit filename="DataIO.h" />
+        <Unit filename="WeatherStore.h" />
+        <Unit filename="Processing.h" />
+        <Unit filename="Calculation.h" />
+        <Unit filename="WeatherData.h" />
+        <Unit filename="Date.h" />
+        <Unit filename="Time.h" />
+        <Unit filename="DateTimeIO.h" />
+        <Unit filename="BST.h" />
+        <Unit filename="Vector.h" />
+        <Extensions />
+    </Project>
+</CodeBlocks_project_file>

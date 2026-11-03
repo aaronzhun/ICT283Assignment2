@@ -1,0 +1,6 @@
+# Build outputs and generated Code::Blocks files
+bin/
+obj/
+*.depend
+*.layout
+*.cscope_file_list
