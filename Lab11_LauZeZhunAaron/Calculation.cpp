@@ -1,8 +1,13 @@
 #include "Calculation.h"
 
+//cannot use std::function
+//cannot use range for loops
+//cannot use lamda function
+
+//must have map and tree, but vector optional
+
 #include <cmath>
 
-// Static methods are called using Calculation:: because no stored object state is needed
 // This class only handles numbers so it can be reused without weather records or console code
 // Add all the values and return zero when the Vector is empty
 double Calculation::CalculateTotal(const Vector<double> & values)
@@ -42,7 +47,6 @@ bool Calculation::CalculateSampleStandardDeviation(const Vector<double> & values
 
 
 // Correlation needs equal sized Vectors with at least two matched pairs
-// Both series must vary because a constant series would give a zero denominator
 bool Calculation::CanCalculateSPCC(const Vector<double> & x, const Vector<double> & y)
 {
     if(x.Size() < 2 || x.Size() != y.Size())

@@ -24,7 +24,7 @@ void PrintTemperature(const WeatherStore & data, int year);
 void PrintCorrelation(const WeatherStore & data, int month);
 void PrintPair(const string & label, const Vector<double> & x, const Vector<double> & y);
 
-// Handle the user's choices and console output, leaving storage and maths to their own modules
+// Handle the choices and console output
 // Options 1 2 and 3 use readings collected from the map and BST
 // Option 4 is a visible unfinished stub in this Lab 11 version
 void RunMenu(const WeatherStore & data)
@@ -35,8 +35,8 @@ void RunMenu(const WeatherStore & data)
     {
         cout << "\n1. Monthly wind average and sample standard deviation\n"
              << "2. Monthly temperature averages and sample standard deviations\n"
-             << "3. Sample Pearson correlation for a month across all years\n"
-             << "4. Yearly report with MAD (WIP)\n"
+             << "3. (SPCC) Sample Pearson correlation coefficient for a month across all years\n"
+             << "4. Yearly MAD (WIP)\n"
              << "5. Exit\n";
         if(!ReadInteger("Choose an option: ", option))
         {

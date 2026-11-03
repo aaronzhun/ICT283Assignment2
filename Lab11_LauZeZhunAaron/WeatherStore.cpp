@@ -6,7 +6,6 @@
 //My collection uses extra memory because it copies complete records before extracting the numeric values.
 //A future improvement could collect only the values needed.
 //eg copy the whole record, instead of just the temp only, it copies everything
-
 typedef WeatherStore::const_iterator WeatherIterator; // Short name for a read-only map iterator, lect 20 example
 
 WeatherRecords * RecordCollector::m_records = nullptr;
@@ -29,7 +28,7 @@ void RecordCollector::Collect(const Bst<DataRecType> & tree, WeatherRecords & re
 
 // This callback returns void and takes const DataRecType &, matching void (*visit)(const T &)
 // It is static so no object or hidden this parameter is needed by the plain function pointer
-// A non-static member or CalculateMean cannot be passed here because its function type does not match
+// cannot pass any non void function ptr into the inorder
 // Append a copy to the caller's Vector, const prevents this callback from changing the tree's key
 void RecordCollector::AddRecord(const DataRecType & record)
 {
