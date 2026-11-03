@@ -6,6 +6,8 @@
 
 #include <iostream>
 
+using std::ostream;
+
 /**
  * @file DateTimeIO.h
  * @author Lau Ze Zhun Aaron
@@ -34,14 +36,14 @@ std::istream & operator >> (std::istream & input, Time & time);
  * @return Output stream
  * @note An out-of-range month is displayed as its stored number
  */
-std::ostream & operator << (std::ostream & os, const Date & date);
+ostream & operator << (ostream & os, const Date & date);
 /**
  * @brief Writes hour:minute
  * @param os Output stream
  * @param time Time to write
  * @return Output stream
  */
-std::ostream & operator << (std::ostream & os, const Time & time);
+ostream & operator << (ostream & os, const Time & time);
 /**
  * @brief Gets a full month name
  * @param month Numeric month from 1 to 12

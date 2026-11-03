@@ -37,7 +37,7 @@ std::istream & operator >> (std::istream & input, Time & time)
     return input;
 }
 
-std::ostream & operator << (std::ostream & os, const Date & date)
+ostream & operator << (ostream & os, const Date & date)
 {
     os << date.GetDay() << ' ';
     if(date.GetMonth() >= 1 && date.GetMonth() <= 12)
@@ -52,7 +52,7 @@ std::ostream & operator << (std::ostream & os, const Date & date)
     return os;
 }
 
-std::ostream & operator << (std::ostream & os, const Time & time)
+ostream & operator << (ostream & os, const Time & time)
 {
     os << time.GetHour() << ':';
     if(time.GetMinute() < 10)

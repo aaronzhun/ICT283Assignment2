@@ -1,5 +1,7 @@
 #include "WeatherStore.h"
 
+typedef WeatherStore::const_iterator WeatherIterator; // Short name for a read-only map iterator, following the Lecture 20 map example
+
 WeatherRecords * RecordCollector::m_records = nullptr;
 
 // Pack year month and day into one key so readings from the same day use the same tree
@@ -33,8 +35,8 @@ void RecordCollector::AddRecord(const DataRecType & record)
 // This scans the day keys and makes temporary copies for calculation
 void CollectMonth(const WeatherStore & data, int month, int year, WeatherRecords & records)
 {
-    WeatherStore::const_iterator day = data.begin(); // Explicit iterator type rather than auto
-    while(day != data.end())
+    // Start at the first entry, stop after the last entry and move to the next day each time
+    for(WeatherIterator day = data.begin(); day != data.end(); day++)
     {
         int storedMonth = (day->first / 100) % 100; // Extract MM from YYYYMMDD
         int storedYear = day->first / 10000;
@@ -42,6 +44,5 @@ void CollectMonth(const WeatherStore & data, int month, int year, WeatherRecords
         {
             RecordCollector::Collect(day->second, records); // first is the key and second is the daily BST
         }
-        ++day;
     }
 }

@@ -1,6 +1,8 @@
 #include "../Calculation.h"
 #include <iostream>
 
+using std::cout;
+
 int main()
 {
     Vector<double> x;
@@ -20,27 +22,27 @@ int main()
         zero.Insert(zero.Size(), d[i]);
         constant.Insert(constant.Size(), 5);
     }
-    std::cout << "Positive correlation: " << Calculation::sPCC(x, positive) << '\n';
-    std::cout << "Negative correlation: " << Calculation::sPCC(x, negative) << '\n';
-    std::cout << "Zero correlation: " << Calculation::sPCC(x, zero) << '\n';
-    std::cout << "Constant series unavailable: " << !Calculation::CanCalculateSPCC(x, constant) << '\n';
+    cout << "Positive correlation: " << Calculation::sPCC(x, positive) << '\n';
+    cout << "Negative correlation: " << Calculation::sPCC(x, negative) << '\n';
+    cout << "Zero correlation: " << Calculation::sPCC(x, zero) << '\n';
+    cout << "Constant series unavailable: " << !Calculation::CanCalculateSPCC(x, constant) << '\n';
     Vector<double> empty;
-    std::cout << "Empty series unavailable: " << !Calculation::CanCalculateSPCC(empty, empty) << '\n';
+    cout << "Empty series unavailable: " << !Calculation::CanCalculateSPCC(empty, empty) << '\n';
     Vector<double> one;
     one.Insert(0, 1);
-    std::cout << "Singleton unavailable: " << !Calculation::CanCalculateSPCC(one, one) << '\n';
-    std::cout << "Unequal lengths unavailable: " << !Calculation::CanCalculateSPCC(x, one) << '\n';
+    cout << "Singleton unavailable: " << !Calculation::CanCalculateSPCC(one, one) << '\n';
+    cout << "Unequal lengths unavailable: " << !Calculation::CanCalculateSPCC(x, one) << '\n';
     double deviation;
     Calculation::CalculateSampleStandardDeviation(x, Calculation::CalculateMean(x), deviation);
-    std::cout << "Sample standard deviation: " << deviation << '\n';
+    cout << "Sample standard deviation: " << deviation << '\n';
     Vector<double> readings;
     readings.Insert(0, 10);
     readings.Insert(1, 20);
     readings.Insert(2, 30);
-    std::cout << "Total of 10 20 30: " << Calculation::CalculateTotal(readings) << '\n';
+    cout << "Total of 10 20 30: " << Calculation::CalculateTotal(readings) << '\n';
     double mean = Calculation::CalculateMean(readings);
-    std::cout << "Mean of 10 20 30: " << mean << '\n';
+    cout << "Mean of 10 20 30: " << mean << '\n';
     Calculation::CalculateSampleStandardDeviation(readings, mean, deviation);
-    std::cout << "Sample standard deviation of 10 20 30: " << deviation << '\n';
+    cout << "Sample standard deviation of 10 20 30: " << deviation << '\n';
     return 0;
 }
