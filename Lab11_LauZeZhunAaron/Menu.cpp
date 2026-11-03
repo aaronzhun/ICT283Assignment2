@@ -75,7 +75,7 @@ void RunMenu(const WeatherStore & data)
                 }
                 else if(option == 4)
                 {
-                    cout << "Option 4 called - yearly report with MAD is not implemented yet\n";
+                    cout << "Option 4 not implemented yet\n";
                 }
                 else
                 {
@@ -108,6 +108,7 @@ bool ReadInteger(const string & prompt, int & value)
         {
             return false; // End of console input also ends the menu
         }
+        cout << "--------------------------------------------------\n";
         stringstream input(line);
         char extra;
         if((input >> value) && !(input >> extra))
